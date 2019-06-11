@@ -18,6 +18,7 @@
 <script>
 import blogHeader from '@/components/common/BlogHeader.vue'
 import blogFooter from '@/components/common/BlogFooter.vue'
+
 export default {
   name: 'BlogLogin',
   // blogHeader、blogFooter组件给申明到components里面然后在template里面使用
@@ -31,7 +32,7 @@ export default {
   methods: {
     login () {
       this.$axios
-        .post('/login', {
+        .post('/login/login/', {
           username: this.loginInfoVo.username,
           password: this.loginInfoVo.password
         })
