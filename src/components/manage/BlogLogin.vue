@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     login () {
+      console.log(this.loginInfoVo.username)
       this.$axios
         .post('/login/login/', {
           username: this.loginInfoVo.username,
