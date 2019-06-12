@@ -43,20 +43,8 @@ export default {
         params: {username: this.loginInfoVo.username,
           password: this.loginInfoVo.password }
       }).then(data => {
-        console.log(data.data)
+        console.log(data)
       }).catch(failResponse => {})
-    //   this.$axios
-    //     .post('/hydro/login/login/', {
-    //       username: this.loginInfoVo.username,
-    //       password: this.loginInfoVo.password
-    //     })
-    //     .then(successResponse => {
-    //       this.responseResult = JSON.stringify(successResponse.data)
-    //       if (successResponse.data.code === 200) {
-    //         this.$router.replace({path: '/index'})
-    //       }
-    //     })
-    //     .catch(failResponse => {})
     }
   }
 }
