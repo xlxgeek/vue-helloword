@@ -43,7 +43,7 @@ export default {
         params: {username: this.loginInfoVo.username,
           password: this.loginInfoVo.password }
       }).then(data => {
-        console.log(data)
+        console.log(data.data)
       }).catch(failResponse => {})
     //   this.$axios
     //     .post('/hydro/login/login/', {
