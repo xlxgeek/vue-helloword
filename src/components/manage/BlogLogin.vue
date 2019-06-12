@@ -32,18 +32,31 @@ export default {
   methods: {
     login () {
       console.log(this.loginInfoVo.username)
-      this.$axios
-        .post('/login/login/', {
-          username: this.loginInfoVo.username,
-          password: this.loginInfoVo.password
-        })
-        .then(successResponse => {
-          this.responseResult = JSON.stringify(successResponse.data)
-          if (successResponse.data.code === 200) {
-            this.$router.replace({path: '/index'})
-          }
-        })
-        .catch(failResponse => {})
+      this.$axios({
+        method: 'post',
+        url: '/hydro/login/login/',
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8'
+        },
+        // data: { username: this.loginInfoVo.username,
+        //   password: this.loginInfoVo.password}
+        params: {username: this.loginInfoVo.username,
+          password: this.loginInfoVo.password }
+      }).then(data => {
+        console.log(data)
+      }).catch(failResponse => {})
+    //   this.$axios
+    //     .post('/hydro/login/login/', {
+    //       username: this.loginInfoVo.username,
+    //       password: this.loginInfoVo.password
+    //     })
+    //     .then(successResponse => {
+    //       this.responseResult = JSON.stringify(successResponse.data)
+    //       if (successResponse.data.code === 200) {
+    //         this.$router.replace({path: '/index'})
+    //       }
+    //     })
+    //     .catch(failResponse => {})
     }
   }
 }
