@@ -44,6 +44,14 @@ export default {
           password: this.loginInfoVo.password }
       }).then(data => {
         console.log(data)
+        this.$router.push({
+          name: 'BlogIndex',
+          data: {id: ''},
+          query: {
+            name: data.data.retData.userName,
+            pass: data.data.retData.passWord
+          }
+        })
       }).catch(failResponse => {})
     }
   }
